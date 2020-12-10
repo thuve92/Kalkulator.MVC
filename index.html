@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Kalkulator!!</title>
+</head>
+<body>
+   
+    <div id="app"></div>
+
+    <script>
+
+        //model
+        const appDiv = document.getElementById("app");
+        let flemming = "kul";
+        let krille = "dope4fly";
+        let mikael = "singo";
+        let slåPåHjul = true;
+        let myArray = ["AC", "+/-", "%", "/", "7", "8", "9", "x", "4", "5",
+                       "6", "-", "1", "2", "3", "+", "0", ".", "="];
+        let output = "";
+        
+        
+        
+    
+        
+
+
+        
+
+        //view
+        show();
+        function show() {
+            let html = "";
+            for(let i = 0; i < myArray.length; i++) {
+                everyFourth = i % 4 == 0 ? "everyFourth" : "";
+                giveOrange = i == 3 || i ==  7 || i == 11 || i == 15 || i == 18 ? "giveOrange" : "";
+                giveGrey = i == 0 || i == 1 || i == 2 ? "giveGrey" : "";
+                zero = i == 16 ? "zero" : "";
+            html += `
+                 <button 
+                 onclick="pressButtons('${myArray[i]}')" 
+                 id="tall${i}" 
+                 class="${zero} ${everyFourth} ${giveOrange} ${giveGrey}">${myArray[i]}</button>
+                
+                    
+            `;      
+            };
+            appDiv.innerHTML = html += `
+            <p>${output}</p>
+            `;
+            
+            
+        };
+
+
+
+
+        //controller
+        
+        function pressButtons(tegn) {
+            if(tegn == "AC") {
+                output = "";
+            }else if(tegn == "=") {
+                output = eval(output);
+            }else if(tegn == "x") {
+                output += "*";
+            }else if(tegn == "%") {
+                output += "/100";
+                output = eval(output);
+            }else if(tegn == "+/-") {
+                output = -Math.abs(output);  
+            }else {
+                output += tegn;
+            }
+            show();
+        };
+
+            
+
+    
+
+
+    </script>
+  
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+.everyFourth {
+    clear: left;
+}
+
+.giveOrange {
+    background-color: orange;
+}
+
+.giveGrey {
+    background-color: darkgray;
+}
+
+button {
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin: 2px;
+    border: solid 1px cyan;
+    border-color: cyan;
+    color: #FFFF;
+    background-color: #282828;
+}
+
+.zero {
+    width: 104px;
+}
+
+#app {
+    position: relative;
+    margin-top: 39vh;
+    margin-left: 42vw;
+    
+}
+
+p {
+    position: absolute;
+    border: solid 2px ;
+    border-color: cyan;
+    background-color: black;
+    color: #17D4FE;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 40px;
+    width: 208px;
+    height: 50px;
+    top: -93px;
+    left: 2px;
+    text-align: right;
+     
+}
+
+body {
+    background-color: black;
+}
